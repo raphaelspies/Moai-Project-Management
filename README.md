@@ -12,7 +12,7 @@
 1. Obtain a login (email raphspies@gmail.com) 
 1. Fork & clone repo
 1. change `example.env` to `.env`
-1. in `.env`:
-   change `DB_USER` to match your username
-   change `DB_PASS` to match your password
-1. 
+1. in `.env`, change `DB_USER` to match your username, and change `DB_PASS` to match your password
+1. Run `npm install`
+1. Run `npm server`
+1. In a new window, run `npm start`
