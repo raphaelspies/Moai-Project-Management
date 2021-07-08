@@ -3,16 +3,16 @@
 ## A Project Management Toolkit
 
 ### Dependencies:
-* [React.js](https://reactjs.org/)
-* [Parcel](https://parceljs.org/)
-* [Mantine (React Components & Hooks)](https://github.com/mantinedev/mantine)
-* [React Redux](https://react-redux.js.org/)
-* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
-* [Mongoose.js](https://mongoosejs.com/docs/2.7.x/index.html)
-* [Express.js Server](https://expressjs.com/)
+* [Axios Client](https://github.com/axios/axios)
 * [CORS Express Middleware](https://www.npmjs.com/package/cors)
 * [DOTENV](https://www.npmjs.com/package/dotenv)
-* [Axios Client](https://github.com/axios/axios)
+* [Express.js Server](https://expressjs.com/)
+* [Mantine (React Components & Hooks)](https://github.com/mantinedev/mantine)
+* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+* [Mongoose.js](https://mongoosejs.com/docs/2.7.x/index.html)
+* [Parcel](https://parceljs.org/)
+* [React.js](https://reactjs.org/)
+* [React Redux](https://react-redux.js.org/)
 
 ### Install Instructions:
 1. Fork & clone repo
