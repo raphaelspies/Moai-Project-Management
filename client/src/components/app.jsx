@@ -1,10 +1,10 @@
 import React from 'react';
-import Login from './login.jsx';
+import TopTabs from './tabs.jsx';
 
 const App = () => {
   return (
     <div>
-      <Login />
+      <TopTabs />
     </div>
   )
 }

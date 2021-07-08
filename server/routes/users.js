@@ -3,6 +3,7 @@ const users = express.Router();
 const db = require('../../db');
 const User = require('../../db/models/user.js');
 const bcrypt = require('bcrypt');
+const cors = require('cors');
 
 users
   .route('/')
