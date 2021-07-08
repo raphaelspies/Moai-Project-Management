@@ -16,6 +16,7 @@ const App = () => {
   // }
 
   const view = useSelector((state) => state.view.value)
+  const isLoggedIn = useSelector((state) => state.login.value)
 
   return (
     <div>
