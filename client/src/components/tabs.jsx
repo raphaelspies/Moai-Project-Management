@@ -4,7 +4,7 @@ import { Tabs, Tab } from '@mantine/core';
 import Login from './login.jsx';
 import CreateUser from './createuser.jsx';
 
-function TopTabs() {
+const TopTabs =() => {
   const [activeTab, setActiveTab] = useState(1);
 
   return (
