@@ -3,10 +3,10 @@
 ## A Project Management Toolkit
 
 ### Dependencies:
-* [React.js] (https://reactjs.org/)
-* [Parcel] (https://parceljs.org/)
-* [Mantine (React Components & Hooks)] (https://github.com/mantinedev/mantine)
-* [React Redux] (https://react-redux.js.org/)
+* [React.js](https://reactjs.org/)
+* [Parcel](https://parceljs.org/)
+* [Mantine (React Components & Hooks)](https://github.com/mantinedev/mantine)
+* [React Redux](https://react-redux.js.org/)
 
 ### Install Instructions:
 1. Obtain a login (email raphspies@gmail.com) 
