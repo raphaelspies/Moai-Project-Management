@@ -5,15 +5,15 @@ import LoginStatus from './loginstatus.jsx';
 
 import Login from './login.jsx';
 import CreateUser from './createuser';
+import moai from '../../dist/favicon.ico'
 
 const App = () => {
   const view = useSelector((state) => state.view.value)
   const isLoggedIn = useSelector((state) => state.login.value)
-
   if (view === 'login') {
     return (
       <div>
-        <h1>Moai</h1>
+        <h1>Moai<img src={moai}/></h1>
         <LoginStatus/>
         <Login/>
       </div>
@@ -21,7 +21,7 @@ const App = () => {
   } else if (view === 'createuser') {
     return (
       <div>
-      <h1>Moai</h1>
+        <h1>Moai<img src={moai}/></h1>
       <LoginStatus/>
       <CreateUser/>
     </div>
@@ -29,7 +29,7 @@ const App = () => {
   } else if (view === 'splash') {
     return (
       <div>
-        <h1>Moai</h1>
+        <h1>Moai<img src={moai}/></h1>
         <LoginStatus/>
         {isLoggedIn && <TopTabs />}
       </div>
