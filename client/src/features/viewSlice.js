@@ -12,5 +12,5 @@ export const viewSlice = createSlice({
   }
 })
 
-export const setView = viewSlice.actions;
+export const { setView } = viewSlice.actions;
 export default viewSlice.reducer;

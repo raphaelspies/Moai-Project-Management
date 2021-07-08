@@ -9,9 +9,9 @@ const TopTabs =() => {
 
   return (
     <Tabs active={activeTab} onTabChange={setActiveTab}>
+      <Tab label="Splash">Splash Page</Tab>
       <Tab label="Login"><Login/></Tab>
       <Tab label="Create Account"><CreateUser/></Tab>
-      <Tab label="Third">Third tab content</Tab>
     </Tabs>
   );
 }

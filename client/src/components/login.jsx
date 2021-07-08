@@ -23,9 +23,11 @@ const Login = (props) => {
     e.preventDefault()
     console.log(form.values.userName)
     dispatch(setLoggedIn(form.values.userName))
+    dispatch(setView('splash'))
   }
 
-  function changeUserName(e) {
+  function submitForm(values) {
+
   }
 
   return (
@@ -45,7 +47,6 @@ const Login = (props) => {
         placeholder="Please enter your username and password:"
         label="Password"
         required
-        description="Must be at least 8 characters long"
         error={form.errors.password && 'Must be at least 8 characters long'}
         value={form.values.password}
         onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}/><br/>
