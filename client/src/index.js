@@ -4,8 +4,6 @@ import App from './components/app.jsx';
 import store from './app/store';
 import { Provider } from 'react-redux';
 
-console.log('hello from parcel!');
-
 ReactDOM.render(
   <Provider store={store}>
     <App/>

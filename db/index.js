@@ -5,7 +5,7 @@ const dotenv = require('dotenv').config();
 const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASS;
 const DB_NAME = 'MVP-db';
-const dbURL = `mongodb+srv://${DB_USER}:${DB_PASS}@hrcluster.uq58l.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
+const dbURL = process.env.DB_URL || `mongodb+srv://${DB_USER}:${DB_PASS}@hrcluster.uq58l.mongodb.net/${DB_NAME}?retryWrites=true&w=majority`;
 const localURL = 'mongodb://localhost:27017/MVP-db';
 
 mongoose.connect(dbURL, {
