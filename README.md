@@ -9,6 +9,10 @@
 * [React Redux](https://react-redux.js.org/)
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 * [Mongoose.js](https://mongoosejs.com/docs/2.7.x/index.html)
+* [Express.js Server](https://expressjs.com/)
+* [CORS Express Middleware](https://www.npmjs.com/package/cors)
+* [DOTENV](https://www.npmjs.com/package/dotenv)
+* [Axios Client](https://github.com/axios/axios)
 
 ### Install Instructions:
 1. Fork & clone repo
