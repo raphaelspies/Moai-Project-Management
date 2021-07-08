@@ -3,10 +3,10 @@
 ## A Project Management Toolkit
 
 ### Dependencies:
-* [Axios Client](https://github.com/axios/axios)
+* [Axios HTTP Client](https://github.com/axios/axios)
 * [CORS Express Middleware](https://www.npmjs.com/package/cors)
 * [DOTENV](https://www.npmjs.com/package/dotenv)
-* [Express.js Server](https://expressjs.com/)
+* [Express.js HTTP Server](https://expressjs.com/)
 * [Mantine (React Components & Hooks)](https://github.com/mantinedev/mantine)
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 * [Mongoose.js](https://mongoosejs.com/docs/2.7.x/index.html)
