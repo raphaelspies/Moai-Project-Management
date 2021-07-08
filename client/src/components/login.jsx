@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { setLoggedIn, setLoggedOut } from '../features/loginSlice.js';
+import { setView } from '../features/viewSlice.js';
 import { Input, TextInput, InputWrapper, PasswordInput, Tooltip, Button } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
 import axios from 'axios';
@@ -15,7 +16,7 @@ const Login = (props) => {
     },
     validationRules: {
       password: (value) => value.length >= 8,
-      username: (value) => !value.includes(' '),
+      userName: (value) => !value.includes(' '),
     },
   })
 
@@ -27,12 +28,14 @@ const Login = (props) => {
   }
 
   function submitForm(values) {
-
+    form.validate();
+    dispatch(setLoggedIn(form.values.userName))
+    dispatch(setView('splash'))
   }
 
   return (
-    <form>
-    <TextInput
+    <form onSubmit={form.onSubmit(values => submitForm(values))}>
+      <TextInput
          id="userName"
          label="Username"
          placeholder="Username"
@@ -44,14 +47,14 @@ const Login = (props) => {
 
       <PasswordInput
         id="Password"
-        placeholder="Please enter your username and password:"
+        placeholder="Password"
         label="Password"
         required
         error={form.errors.password && 'Must be at least 8 characters long'}
         value={form.values.password}
         onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}/><br/>
 
-        <Button type="submit" onClick={changeIsLoggedIn}>Submit</Button>
+        <Button type="submit">Submit</Button>
     </form>
   )
 };

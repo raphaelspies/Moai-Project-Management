@@ -84,7 +84,7 @@ const CreateUser = (props) => {
         // description="Must include at least one letter, number and special character"
       /><br/>
 
-      <Button type="submit" className="btn btn-primary">Submit</Button>
+      <Button type="submit">Submit</Button>
     </form>
   )
 }

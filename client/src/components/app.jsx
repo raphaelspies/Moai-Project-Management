@@ -16,7 +16,6 @@ const App = () => {
         <h1>Moai</h1>
         <LoginStatus/>
         <Login/>
-        {isLoggedIn && <TopTabs />}
       </div>
     )
   } else if (view === 'createuser') {
@@ -32,7 +31,7 @@ const App = () => {
       <div>
         <h1>Moai</h1>
         <LoginStatus/>
-        <TopTabs />
+        {isLoggedIn && <TopTabs />}
       </div>
     )
   }
