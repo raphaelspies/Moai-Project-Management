@@ -2,6 +2,7 @@ const express = require('express');
 const users = express.Router();
 const db = require('../../db');
 const User = require('../../db/models/user.js');
+const bcrypt = require('bcrypt');
 
 users
   .route('/')
