@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import TopTabs from './tabs.jsx';
-import UserStatus from './userstatus.jsx';
+import LoginStatus from './loginstatus.jsx';
 
 const App = () => {
-  const [ isLoggedIn, setIsLoggedIn ] = useState(false);
-  const [ view, setView ] = useState('login');
+  // const [ isLoggedIn, setIsLoggedIn ] = useState(false);
+  // const [ view, setView ] = useState('login');
 
-  function LogIn(value) {
-    setIsLoggedIn(value);
-  }
+  // function LogIn(value) {
+  //   setIsLoggedIn(value);
+  // }
 
-  function changeView(e) {
-    setView(e.target.value)
-  }
+  // function changeView(e) {
+  //   setView(e.target.value)
+  // }
+
+  const view = useSelector((state) => state.view.value)
 
   return (
     <div>
       <h1>Moai</h1>
-      <UserStatus LogIn={LogIn} value={'login'} changeView={changeView} isLoggedIn={isLoggedIn}/>
-      <TopTabs changeView={changeView}/>
+      <LoginStatus/>
+      <TopTabs />
     </div>
   )
 }

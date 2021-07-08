@@ -5,7 +5,7 @@ import Login from './login.jsx';
 import CreateUser from './createuser.jsx';
 
 const TopTabs =() => {
-  const [activeTab, setActiveTab] = useState(1);
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <Tabs active={activeTab} onTabChange={setActiveTab}>

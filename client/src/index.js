@@ -1,8 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app.jsx';
-import * as bootstrap from 'bootstrap';
+import store from './app/store';
+import { Provider } from 'react-redux';
 
 console.log('hello from parcel!');
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  document.getElementById('app')
+  );

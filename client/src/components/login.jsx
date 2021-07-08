@@ -1,22 +1,56 @@
 import React from 'react';
-import { Input, InputWrapper, PasswordInput, Tooltip, Button } from '@mantine/core';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLoggedIn, setLoggedOut } from '../features/loginSlice.js';
+import { Input, TextInput, InputWrapper, PasswordInput, Tooltip, Button } from '@mantine/core';
+import { useForm } from '@mantine/hooks';
 import axios from 'axios';
 
 const Login = (props) => {
+  const isLoggedIn = useSelector((state) => state.login.value);
+  const dispatch = useDispatch();
+  const form = useForm({
+    initialValues: {
+      userName: '',
+      password: ''
+    },
+    validationRules: {
+      password: (value) => value.length >= 8,
+      username: (value) => !value.includes(' '),
+    },
+  })
+
+  function changeIsLoggedIn(e) {
+    e.preventDefault()
+    console.log(form.values.userName)
+    dispatch(setLoggedIn(form.values.userName))
+  }
+
+  function changeUserName(e) {
+  }
+
   return (
     <form>
-        <InputWrapper
-          label="Please enter your username and password:">
-        </InputWrapper>
-        <Input variant="default" placeholder="Username" /><br/>
+    <TextInput
+         id="userName"
+         label="Username"
+         placeholder="Username"
+         required
+         error={form.errors.userName && 'Username cannot contain spaces'}
+         value={form.values.userName}
+         onChange={(event) => form.setFieldValue('userName', event.currentTarget.value)}
+       /><br/>
 
-        <PasswordInput
-          placeholder="Password"
-          // label="Password"
-          // description="Password must include at least one letter, number and special character"
-          required
-        /><br/>
-        <Button type="submit">Submit</Button>
+      <PasswordInput
+        id="Password"
+        placeholder="Please enter your username and password:"
+        label="Password"
+        required
+        description="Must be at least 8 characters long"
+        error={form.errors.password && 'Must be at least 8 characters long'}
+        value={form.values.password}
+        onChange={(event) => form.setFieldValue('password', event.currentTarget.value)}/><br/>
+
+        <Button type="submit" onClick={changeIsLoggedIn}>Submit</Button>
     </form>
   )
 };
