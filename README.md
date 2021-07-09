@@ -8,6 +8,8 @@
 * [DOTENV](https://www.npmjs.com/package/dotenv)
 * [Express.js HTTP Server](https://expressjs.com/)
 * [Mantine (React Components & Hooks)](https://github.com/mantinedev/mantine)
+* [Material-UI](https://material-ui.com/)
+* [Moment.js](https://momentjs.com/)
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
 * [Mongoose.js](https://mongoosejs.com/docs/2.7.x/index.html)
 * [Parcel](https://parceljs.org/)
