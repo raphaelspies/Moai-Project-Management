@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const userSchema = require('./models/user.js')
+const messageSchema = require('./models/message.js')
 const dotenv = require('dotenv').config();
 
 const DB_USER = process.env.DB_USER;
