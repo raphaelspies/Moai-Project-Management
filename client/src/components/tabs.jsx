@@ -6,6 +6,7 @@ import CreateUser from './createuser.jsx';
 import Splash from './splash.jsx';
 import Jobsite from './jobsite.jsx';
 import Reports from './reports.jsx';
+import Messages from './messages.jsx';
 
 const TopTabs =() => {
   const [activeTab, setActiveTab] = useState(0);
@@ -15,6 +16,7 @@ const TopTabs =() => {
       <Tab label="Home"><Splash/></Tab>
       <Tab label="Jobsite"><Jobsite/></Tab>
       <Tab label="Reports"><Reports/></Tab>
+      <Tab label="Messages"><Messages/></Tab>
     </Tabs>
   );
 }
