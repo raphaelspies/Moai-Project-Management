@@ -2,8 +2,9 @@ import React from 'react';
 import { Input, TextInput, InputWrapper, PasswordInput, MailIcon, Button } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
 import Axios from 'axios';
+const dotenv = require('dotenv').config();
 
-const URL = 'http://localhost:3000/users'
+const URL = `http://localhost:3000/users`
 
 const CreateUser = (props) => {
   const form = useForm({

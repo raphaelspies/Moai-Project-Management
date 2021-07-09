@@ -12,18 +12,14 @@ const LoginStatus = (props) => {
   function changeViewToLogin(e) {
     e.preventDefault()
     dispatch(setView('login'))
-    console.log('view: ', view)
   }
 
   function changeViewToCreateUser(e) {
     e.preventDefault()
     dispatch(setView('createuser'))
-    console.log('view: ', view)
   }
 
-  function submitLogin() {
-    dispatch(setView('splash'))
-  }
+
 
   return (
     isLoggedIn === false ? (

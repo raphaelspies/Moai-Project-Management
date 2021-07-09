@@ -4,7 +4,11 @@ import { setLoggedIn, setLoggedOut } from '../features/loginSlice.js';
 import { setView } from '../features/viewSlice.js';
 import { Input, TextInput, InputWrapper, PasswordInput, Tooltip, Button } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
-import axios from 'axios';
+import Axios from 'axios';
+const dotenv = require('dotenv').config();
+
+// const URL = `${process.env.SERV_URL}/login`
+const URL = `http://localhost:3000/login/`
 
 const Login = (props) => {
   const isLoggedIn = useSelector((state) => state.login.value);
@@ -29,8 +33,17 @@ const Login = (props) => {
 
   function submitForm(values) {
     form.validate();
-    dispatch(setLoggedIn(form.values.userName))
-    dispatch(setView('splash'))
+    console.log(values)
+    Axios.post(URL, values)
+      .then(response => {
+        console.log('res: ', response)
+        dispatch(setLoggedIn(form.values.userName))
+        dispatch(setView('splash'))
+      })
+      .catch(err => {
+        console.log(err)
+
+      })
   }
 
   return (
