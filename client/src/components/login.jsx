@@ -53,6 +53,8 @@ const Login = (props) => {
       })
   }
 
+  // function checkUser(values)
+
   function clearErrors() {
     setServerError(null);
     form.setFieldError('userName', false);

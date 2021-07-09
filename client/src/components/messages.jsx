@@ -1,19 +1,45 @@
-import React from 'react';
+import React, {useEffect, useState } from 'react';
 import { Table } from '@mantine/core';
+import Axios from 'axios';
+
+const URL = `http://localhost:3000/messages/all`
 
 const Messages = (props) => {
-  // const rows = props.messages.map(message => {
-  //   <tr key={message.date}>
-  //     <td>{message.sender}</td>
-  //     <td>{message.subject}</td>
-  //     <td>{message.date}</td>
-  //     <td>{message.project}</td>
-  //     <td>{message.trade}</td>
-  //   </tr>
-  // })
+  const [messages, setMessages ] = useState([]);
+  const [ isLoaded, setIsLoaded ] = useState(false);
+
+  useEffect(() => {
+    getMessages();
+    console.log("messages: ", messages)
+  }, [])
+
+  const getMessages = function() {
+    return Axios.get(URL)
+    .then(response => {
+      console.log('res: ', response.data)
+      // const formattedMessages = renderMessages(response.data)
+    // })
+    // .then(formattedMessages => {
+      // console.log('formatted: ', formattedMessages)
+      setMessages(response.data)
+      console.log(messages)
+      setIsLoaded(true);
+    })
+    .catch(err => {
+      console.log(err)
+    })
+  }
+
+// const renderMessages = function(messages) {
+//   console.log('render this: ', messages)
+//   const rows =
+//   console.log('rendered: ', rows)
+//   return rows;
+// }
 
   return (
-    <Table>
+    isLoaded ?
+    (<Table>
       <thead>
         <tr>
           <th>Sender</th>
@@ -23,8 +49,21 @@ const Messages = (props) => {
           <th>Trade</th>
         </tr>
       </thead>
-      <tbody></tbody>
-    </Table>
+      <tbody>
+        {messages.map(message => {
+          return (
+          <tr key={message.Date}>
+            <td>{message.Sender}</td>
+            <td>{message.Subject}</td>
+            <td>{message.Date}</td>
+            <td>{message.Project}</td>
+            <td>{message.Trade}</td>
+          </tr>
+        )
+        })}
+      </tbody>
+    </Table>) :
+    (<div>Loading...</div>)
   )
 }
 
