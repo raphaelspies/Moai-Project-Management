@@ -12,16 +12,16 @@ login
     // User.find()
     .then(response => {
       console.log(response)
-      if (response.length !== 0) {
+      if (response !== null) {
         res.status(200).send(response)
       } else {
         console.log('Error: user/password combination not found')
-        res.status(400).send("Error: user/password combination not found")
+        res.status(401).send("Error: user/password combination not found")
       }
     })
     .catch(err => {
       console.log(err)
-      res.status(400).send(err)
+      res.status(401).send(err)
     })
   })
 
