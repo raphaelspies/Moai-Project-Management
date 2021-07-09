@@ -4,6 +4,7 @@ import Axios from 'axios';
 import moment from 'moment';
 import MessageList from './messagelist.jsx';
 import MessageCompose from './messagecompose.jsx';
+import Message from './message.jsx';
 moment().format();
 
 const URL = `http://localhost:3000/messages/all`
@@ -48,15 +49,7 @@ const Messages = (props) => {
           </thead>
           <tbody>
             {messages.map(message => {
-              return (
-              <tr key={message.Date}>
-                <td>{message.Sender}</td>
-                <td>{message.Subject}</td>
-                <td>{moment(message.Date).format('dddd, MMMM Do, YYYY')}</td>
-                <td>{message.Project}</td>
-                <td>{message.Trade}</td>
-              </tr>
-            )
+              return (<Message message={message} key={message._id}/>)
             })}
           </tbody>
         </Table>

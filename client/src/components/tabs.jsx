@@ -15,8 +15,8 @@ const TopTabs =() => {
     <Tabs active={activeTab} onTabChange={setActiveTab}>
       <Tab label="Home"><Splash/></Tab>
       <Tab label="Jobsite"><Jobsite/></Tab>
-      <Tab label="Reports"><Reports/></Tab>
       <Tab label="Messages"><Messages/></Tab>
+      <Tab label="Reports"><Reports/></Tab>
     </Tabs>
   );
 }
