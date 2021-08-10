@@ -21,9 +21,9 @@
 1. change `example.env` to `.env`
 1. Register a new database in MongoDB Atlas, then add your database URL under `DB_URL` in `.env` file 
 1. Set your current IP address for access to your Mongo DB:
- * under *Security* : Create a new entry
- * Click *edit* 
- * Click "My current IP Address
+   * under *Security* : Create a new entry
+   * Click *edit* 
+   * Click "My current IP Address
 5. In `.env`, change `DB_USER` to match your username, and change `DB_PASS` to match your password
 1. Run `npm install`
 1. Run `npm server`
