@@ -15,6 +15,7 @@ const Login = (props) => {
   const [ serverError, setServerError ] = useState(null);
   const isLoggedIn = useSelector((state) => state.login.value);
   const dispatch = useDispatch();
+
   const form = useForm({
     initialValues: {
       userName: '',
@@ -36,7 +37,7 @@ const Login = (props) => {
   function submitForm(values) {
     setLoading(true);
     form.validate();
-    console.log(values)
+    console.log(values);
     Axios.post(URL, values)
       .then(response => {
         console.log('res: ', response)
@@ -45,9 +46,9 @@ const Login = (props) => {
         dispatch(setView('splash'))
       })
       .catch(err => {
-        console.log(err)
+        console.log(err);
         setLoading(false);
-        setServerError("wrong username or password")
+        setServerError("wrong username or password");
         form.setFieldError('userName', true);
         form.setFieldError('password', true);
       })

@@ -1,5 +1,8 @@
-import React from 'react';
-import { Input, TextInput, InputWrapper, PasswordInput, MailIcon, Button } from '@mantine/core';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLoggedIn, setLoggedOut } from '../features/loginSlice.js';
+import { setView } from '../features/viewSlice.js';
+import { Input, TextInput, InputWrapper, PasswordInput, MailIcon, Tooltip, Button, LoadingOverlay } from '@mantine/core';
 import { useForm } from '@mantine/hooks';
 import Axios from 'axios';
 const dotenv = require('dotenv').config();
@@ -7,6 +10,11 @@ const dotenv = require('dotenv').config();
 const URL = `http://localhost:3000/users`
 
 const CreateUser = (props) => {
+  const [ loading, setLoading] = useState(false);
+  const [ serverError, setServerError ] = useState(null);
+  const isLoggedIn = useSelector((state) => state.login.value);
+  const dispatch = useDispatch();
+
   const form = useForm({
     initialValues: {
       firstName: '',
@@ -23,14 +31,22 @@ const CreateUser = (props) => {
   })
 
   function submitForm (values) {
+    setLoading(true);
+    form.validate();
+    console.log(values);
     Axios.post(URL, values)
-    .then(response => console.log(response))
-    .catch(err => console.log(err))
+    .then(response => {
+      console.log(response)
+      dispatch(setLoggedIn(form.values.userName))
+      setLoading(false);
+      dispatch(setView('splash'))
+    })
+    .catch(err => console.log(err));
+    setLoading(false);
   }
 
   return (
     <form onSubmit={form.onSubmit(values => submitForm(values))}>
-
       <TextInput
         id="firstName"
         label="First Name"
