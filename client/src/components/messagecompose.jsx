@@ -24,18 +24,14 @@ const MessageCompose = (props) => {
     },
   })
 
-  const postMessage = async function(formData) {
-    const response = await Axios.post(URL, formData)
-    // return Axios.post(URL, formData)
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    // .then(response => {
-    //   console.log('post: ', response.data)
-    // })
-    // .catch(err => {
-    //   console.log(err)
-    // })
+  const postMessage = function(formData) {
+    return Axios.post(URL, formData)
+    .then(response => {
+      console.log('post: ', response.data)
+    })
+    .catch(err => {
+      console.log(err)
+    })
   }
 
   return (
