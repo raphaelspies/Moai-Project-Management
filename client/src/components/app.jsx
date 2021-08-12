@@ -5,7 +5,7 @@ import LoginStatus from './loginstatus.jsx';
 
 import Login from './login.jsx';
 import CreateUser from './createuser';
-import moai from '../../dist/favicon.ico'
+// import moai from '../../dist/favicon.ico'
 
 const App = () => {
   const view = useSelector((state) => state.view.value)
@@ -21,7 +21,7 @@ const App = () => {
   } else if (view === 'createuser') {
     return (
       <div>
-        <h1>Moai<img src={moai}/></h1>
+        {/* <h1>Moai<img src={moai}/></h1> */}
       <LoginStatus/>
       <CreateUser/>
     </div>

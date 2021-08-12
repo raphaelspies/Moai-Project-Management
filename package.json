@@ -4,25 +4,35 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch --no-cache",
     "preload": "node -r dotenv/config ./server/index.js",
     "server": "nodemon ./server/index.js",
     "start": "parcel ./client/dist/index.html"
+  },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
+    }
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-react": "^7.14.5",
     "@mantine/core": "^2.0.2",
     "@mantine/hooks": "^2.0.2",
     "@material-ui/core": "^4.12.1",
     "@material-ui/icons": "^4.11.2",
     "@reduxjs/toolkit": "^1.6.0",
+    "@testing-library/react": "^12.0.0",
     "@types/react": "^17.0.14",
     "axios": "^0.21.1",
+    "babel-jest": "^27.0.6",
     "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "bootstrap": "^5.0.2",
+    "core-js": "^3.16.1",
     "cors": "^2.8.5",
     "dotenv": "^5.0.1",
     "express": "^4.17.1",
@@ -34,10 +44,13 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-jss": "^10.7.1",
-    "react-redux": "^7.2.4"
+    "react-redux": "^7.2.4",
+    "regenerator-runtime": "^0.13.9"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.0",
     "@fortawesome/fontawesome-free": "^5.15.3",
+    "identity-obj-proxy": "^3.0.0",
     "parcel-bundler": "^1.12.5"
   }
 }
